@@ -8,6 +8,9 @@ This is an online learning platform designed to provide an engaging and student-
 **this platform is build using:**
 
 **Frontend:** HTML for structure, CSS for styling and responsiveness, JavaScript for interactivity.
+
 **Backend:** PHP for server-side processing and user authentication.
+
 **Database:** MySQL for storing user data, video content, quizzes, and progress tracking.
+
 **Development Environment:** XAMPP for local server setup and testing.
