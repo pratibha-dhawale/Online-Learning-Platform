@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgot Password Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin-top: 150px;
+    }
+    .container {
+      margin-top: 100px;
+      max-width: 380px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    .form-group {
+      margin-bottom: 15px;
+      
+    }
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      
+    }
+    .form-group input[type="email"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-sizing: border-box;
+    }
+    .form-group input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-sizing: border-box;
+    }
+    .btn-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .btn-container button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .btn-clear {
+      background-color: #ff6347; /* Red */
+      color: white;
+    }
+    .btn-save {
+      background-color: #075a0a; /* Green */
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Forgot Password</h2>
+  <form id="questionForm" action="UserForgotPass.php" method="POST">
+    <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="password">New Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <div class="form-group">
+      <label for="confirmpass">Confirm Password:</label>
+      <input type="password" id="confirmpass" name="confirmpass" required>
+    </div>
+    <div class="btn-container">
+      <button type="button" class="btn-clear" onclick="clearForm()">Clear</button>
+      <button type="submit" class="btn-save">Save</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  function clearForm() {
+    document.getElementById("questionForm").reset();
+  }
+</script>
+
+</body>
+</html>

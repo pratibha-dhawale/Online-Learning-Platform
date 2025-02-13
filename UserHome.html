@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="UserLogin.css">
+  <style>
+    .section.active {
+      display: block;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .test-container {
+      margin-bottom: 20px;
+    }
+
+    .test-name {
+      display: inline-block;
+      margin-right: 10px;
+      font-size: 20px;
+      margin-left: 10px;
+    }
+
+    .test-button {
+      display: inline-block;
+      float: right;
+      background-color:green;
+      margin-right: 30px;
+      color: white;
+      font-size: 17px;
+    }
+    .signup-button {
+        background-color: #007bff;
+        color: #fff;
+        margin-left: 300px;
+    }
+    table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <button onclick="toggleSection('home')">Home</button>
+    <button onclick="toggleSection('about')">About Test</button>
+    <button onclick="toggleSection('select')">Select Test</button>
+    <button onclick="toggleSection('video')">Video</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+  <div id="homeSection" class="section active">
+    <img src="home.png" alt="Home Image" style="width: 100%; height: 585px;">
+  </div>
+  <div id="aboutSection" class="section">
+    <h2>Aptitude Test Preparation for Pre-employment Assessments</h2>
+    <p>Practice with our online aptitude tests and pass your employee aptitude test. </p>
+    <p>Try our practice tests for free or sign up for one of our comprehensive test preparation packages.</p>
+    <button onclick="Register()" class="signup-button">Sign Up</button>
+    <h2>Instructions</h2>
+    <table>
+      <tr>
+          <th>Name Of The Test</th>
+          <th>Number Of Questions</th>
+          <th>Maximum Marks</th>
+          <th>Maximum Time(Minutes)</th>
+      </tr>
+      <tr>
+          <td>Quantitative Test</td>
+          <td>15</td>
+          <td>15</td>
+          <td>20</td>
+      </tr>
+      <tr>
+          <td>Verbal Ability</td>
+          <td>15</td>
+          <td>15</td>
+          <td>20</td>
+      </tr>
+      <tr>
+          <td>Logical Reasoning</td>
+          <td>15</td>
+          <td>15</td>
+          <td>20</td>
+      </tr>
+  </table>
+  <ul>
+    <li>The test consists of 15 questions and lasts for 20 minutes.</li>
+    <li>All questions in this test carry equal marks. Each correct answer contributes equally to your total score.</li>
+    <li>The test will automatically end after 20 minutes. Ensure you have submitted all your answers before the time expires.</li>
+    <li>Ensure you have a stable internet connection.</li>
+    <li>We wish you success in your aptitude test. Start the test when you're ready.</li>
+  </ul>
+  <button onclick="toggleSection('select')" class="signup-button">Start Test</button>
+    <!-- Content for About Test Section -->
+  </div>
+
+  <div id="selectSection" class="section">
+    <h2>Select Test Type</h2>
+    <!-- Content for Select Test Section -->
+    <div class="test-container">
+      <span class="test-name">Quantitative Test</span>
+      <button class="test-button" onclick="StartQuantitative()">Start Now</button>
+    </div>
+    <div class="test-container">
+      <span class="test-name">Verbal Ability</span>
+      <button class="test-button" onclick="StartVerbal()">Start Now</button>
+    </div>
+    <div class="test-container">
+      <span class="test-name">Logical Reasoning</span>
+      <button class="test-button" onclick="StartLogical()">Start Now</button>
+    </div>
+  </div>
+
+<!-- video section -->
+<div id="videoSection" class="section">
+  <h2>Video Section</h2>
+  <div id="videoList"></div> <!-- This will hold the list of videos -->
+</div>
+
+  <script>
+    function toggleSection(sectionId) {
+      // Hide all sections
+      var sections = document.querySelectorAll('.section');
+      sections.forEach(function(section) {
+        section.classList.remove('active');
+      });
+
+      // Show the clicked section
+      var section = document.getElementById(sectionId + 'Section');
+      section.classList.add('active');
+    }
+
+    function logout() {
+      alert('Logout successful!');
+      window.location.href = "index.html"; 
+    }
+    function StartQuantitative() {
+      window.location.href = "StartQuantitativeT.php"; 
+    }
+    function StartVerbal() {
+      window.location.href = "StartVerbalT.php"; 
+    }
+    function StartLogical() {
+      window.location.href = "StartLogicalT.php"; 
+    }
+    function Register() {
+      window.location.href = "Registration.html"; 
+    }
+    //video section
+    function loadVideos() {
+  fetch('getVideos.php') // URL to the PHP script that fetches videos
+    .then(response => response.json())
+    .then(videos => {
+      let videoList = document.getElementById('videoList');
+      videoList.innerHTML = ''; // Clear any previous content
+
+      // Loop through each video and create HTML content
+      videos.forEach(video => {
+        let videoContainer = document.createElement('div');
+        videoContainer.classList.add('video-container');
+        
+        let videoTitle = document.createElement('h3');
+        videoTitle.textContent = video.topic_name;
+        
+        let videoIframe = document.createElement('iframe');
+        videoIframe.width = "560";
+        videoIframe.height = "315";
+        videoIframe.src = video.video_url;
+        videoIframe.frameBorder = "0";
+        videoIframe.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+        videoIframe.allowFullscreen = true;
+
+        videoContainer.appendChild(videoTitle);
+        videoContainer.appendChild(videoIframe);
+        videoList.appendChild(videoContainer);
+      });
+    })
+    .catch(error => {
+      console.error('Error loading videos:', error);
+    });
+}
+
+// Call the loadVideos function when the "Video" section is shown
+function toggleSection(sectionId) {
+  // Hide all sections
+  var sections = document.querySelectorAll('.section');
+  sections.forEach(function(section) {
+    section.classList.remove('active');
+  });
+
+  // Show the clicked section
+  var section = document.getElementById(sectionId + 'Section');
+  section.classList.add('active');
+
+  // If the "Video" section is active, load videos
+  if (sectionId === 'video') {
+    loadVideos();
+  }
+}
+
+  </script>
+</body>
+</html>

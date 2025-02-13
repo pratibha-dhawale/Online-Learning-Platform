@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .menu {
+    display: flex;
+    background-color: #090707;
+  }
+  
+  .menu button {
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    color:white;
+    font-size: 17px;
+    margin-left: 10px;
+  }
+  
+  .section {
+    display: none;
+  }
+  
+  .section.active {
+    display: block;
+  }
+  
