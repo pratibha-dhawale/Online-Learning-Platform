@@ -25,8 +25,9 @@ This is an online learning platform designed to provide an engaging and student-
 ![Image](https://github.com/user-attachments/assets/e2ff0502-e221-4ab0-8746-fecc82e58dc2)
 ![Image](https://github.com/user-attachments/assets/f938f3d6-ca6b-431f-af63-5100c6e0eaba)
 ![Image](https://github.com/user-attachments/assets/1e737c8c-87da-48f9-95f6-59f720fb7b1c)
-![Image](https://github.com/user-attachments/assets/9c658c7e-7033-4008-9ff3-0a4331912643)
-![Image](https://github.com/user-attachments/assets/b4b5dc09-14aa-42b5-9b89-58964aacc9b4)
+
+
+
 ![Image](https://github.com/user-attachments/assets/bdc2a4cb-de04-48bd-8a5c-d77fe7d33c9b)
 ![Image](https://github.com/user-attachments/assets/ab63362d-a2b9-4ddc-a6c0-bd4c8a715e41)
 ![Image](https://github.com/user-attachments/assets/cfecd5d8-4bdf-4ad0-bee0-dad3fe3e90e8)
