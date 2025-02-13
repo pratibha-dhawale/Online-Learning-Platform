@@ -16,6 +16,7 @@ This is an online learning platform designed to provide an engaging and student-
 **Development Environment:** XAMPP for local server setup and testing.
 
 **Below are the details of my internship:**
+
 **Company Name:** CODTECH IT SOLUTIONS PVT.LTD
 **Name:** Pratibha Arun Dhawale
 **Entern ID:** CT12LYQ
