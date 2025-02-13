@@ -15,6 +15,14 @@ This is an online learning platform designed to provide an engaging and student-
 
 **Development Environment:** XAMPP for local server setup and testing.
 
+**Below are the details of my internship:**
+**Company Name:** CODTECH IT SOLUTIONS PVT.LTD
+**Name:** Pratibha Arun Dhawale
+**Entern ID:** CT12LYQ
+**Domain:** Web Development
+**Duration:** 2 Months
+**Mentor:** Neela Santhosh Kumar
+
 **Output:**
 ![Image](https://github.com/user-attachments/assets/0c2ca6fd-0d63-4221-b987-48dc11d6d5f6)
 ![Image](https://github.com/user-attachments/assets/9c658c7e-7033-4008-9ff3-0a4331912643)
